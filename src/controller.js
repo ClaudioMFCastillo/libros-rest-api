@@ -10,7 +10,7 @@ class LibroController{
     async add(req, res){
         const libro = req.body;
         const [result] = await pool.query(`INSERT INTO libros(nombre, autor,
-             categoria, anio-publicacion, ISBN) VALUE (?, ?, ?, ?, ?)`, [libros.nombre, libros.autor, libros.categoria, libros.anio-publicacion, libros.isbn]);
+             categoria, anioPublicacion, ISBN) VALUES (?, ?, ?, ?, ?)`, [libro.nombre, libro.autor, libro.categoria, libro.anioPublicacion, libro.isbn]);
              res.json({"Id insertado": result.insertId});
     }
 
